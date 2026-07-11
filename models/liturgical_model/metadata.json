@@ -1,0 +1,36 @@
+{
+  "season_map": {
+    "ordinary": 0,
+    "lent": 1,
+    "advent": 2,
+    "easter": 3,
+    "christmas": 4
+  },
+  "weekday_map": {
+    "monday": 0,
+    "tuesday": 1,
+    "wednesday": 2,
+    "thursday": 3,
+    "friday": 4,
+    "saturday": 5,
+    "sunday": 6
+  },
+  "classes": [
+    "green",
+    "red",
+    "violet",
+    "white"
+  ],
+  "idx_to_class": {
+    "0": "green",
+    "1": "red",
+    "2": "violet",
+    "3": "white"
+  },
+  "class_to_idx": {
+    "green": 0,
+    "red": 1,
+    "violet": 2,
+    "white": 3
+  }
+}

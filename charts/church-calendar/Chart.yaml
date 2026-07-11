@@ -1,0 +1,6 @@
+apiVersion: v2
+name: church-calendar
+description: Helm Chart para deploy da API de Serving de ML do Calendário da Igreja.
+type: application
+version: 1.0.0
+appVersion: "1.0.0"

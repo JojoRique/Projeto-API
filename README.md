@@ -1,4 +1,4 @@
-# Church Calendar DevOps & MLOps Pipeline 📅⛪
+# Calendário Católico Litúrgico DevOps & MLOps Pipeline 📅⛪
 
 Este repositório contém a implementação prática e incremental de um pipeline de engenharia de dados e MLOps ponta a ponta. O projeto consome dados da API pública do Calendário Litúrgico da Igreja (Church Calendar API), realiza transformações e validações de qualidade de dados, executa treinamento de modelo preditivo rastreado pelo MLflow, monitora drift de dados com Evidently, e serve predições em Kubernetes local (Kind) usando Helm Charts.
 

@@ -15,25 +15,25 @@ A arquitetura do projeto segue princípios modernos de Engenharia de Dados e MLO
 
 ```mermaid
 flowchart TD
-    subgraph Data Source
+    subgraph Data_Source ["Data Source"]
         API["Church Calendar API (calapi.inadiutorium.cz)"]
     end
 
-    subgraph Data & ML Pipeline (Dagster & MLflow)
-        Ingest["ingestion.py\n(API -> data/raw/*.json)"]
-        Transform["transformation.py\n(Pydantic Validation & Flatten -> clean_calendar.csv)"]
-        Train["training.py\n(Random Forest + MLflow Tracking)"]
-        Drift["drift_monitoring.py\n(Evidently Data Drift Report)"]
+    subgraph Data_ML_Pipeline ["Data & ML Pipeline (Dagster & MLflow)"]
+        Ingest["ingestion.py<br/>(API -> data/raw/*.json)"]
+        Transform["transformation.py<br/>(Pydantic Validation & Flatten -> clean_calendar.csv)"]
+        Train["training.py<br/>(Random Forest + MLflow Tracking)"]
+        Drift["drift_monitoring.py<br/>(Evidently Data Drift Report)"]
     end
 
-    subgraph Serving Layer
-        FastAPI["serving.py\n(FastAPI Prediction API)"]
-        Docker["Dockerfile\n(Python-slim Container)"]
+    subgraph Serving_Layer ["Serving Layer"]
+        FastAPI["serving.py<br/>(FastAPI Prediction API)"]
+        Docker["Dockerfile<br/>(Python-slim Container)"]
     end
 
-    subgraph Infrastructure
-        Kind["Kind Cluster\n(Kubernetes Local)"]
-        Helm["Helm Chart\n(Release Deployment)"]
+    subgraph Infrastructure ["Infrastructure"]
+        Kind["Kind Cluster<br/>(Kubernetes Local)"]
+        Helm["Helm Chart<br/>(Release Deployment)"]
     end
 
     API --> Ingest
@@ -45,6 +45,7 @@ flowchart TD
     Docker --> Helm
     Helm --> Kind
 ```
+
 
 1. **Ingestão**: Carrega o histórico mensal litúrgico de 2023 a 2026, salvando-os de forma bruta (`data/raw/`).
 2. **Transformação & Data Quality**: Limpa e tipifica os dados brutificados. Filtra e extrai a celebração litúrgica principal baseada na prioridade do `rank_num`. Valida a consistência de tipos e valores em runtime via **Pydantic**.

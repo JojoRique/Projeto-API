@@ -14,7 +14,7 @@ Este repositório contém a implementação prática e incremental de um pipelin
 A arquitetura do projeto segue princípios modernos de Engenharia de Dados e MLOps:
 
 ```mermaid
-flowchain
+flowchart TD
     subgraph Data Source
         API["Church Calendar API (calapi.inadiutorium.cz)"]
     end

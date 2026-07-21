@@ -38,6 +38,14 @@ jobs:
       run: |
         docker build -t church-calendar-serving:test .
 
+    - name: Security Scan (Container & Dependencies)
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: 'church-calendar-serving:test'
+        format: 'table'
+        exit-code: '0'
+        severity: 'CRITICAL,HIGH'
+
     - name: Validate Helm Chart
       run: |
         # Instalar helm no runner
@@ -46,3 +54,4 @@ jobs:
         helm lint charts/church-calendar
         # Validar renderização dos templates manifestos
         helm template test-release charts/church-calendar --debug
+
